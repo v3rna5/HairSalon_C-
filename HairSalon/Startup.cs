@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ToDoList.Models
+namespace HairSalon.Models
 {
     public class Startup
     {
@@ -38,9 +38,5 @@ namespace ToDoList.Models
                 await context.Response.WriteAsync("Hello World!");
             });
         }
-    }
-    public static class DBConfiguration
-    {
-      public static string ConnectionString = "server=localhost;user id=root;password=root;port=8889;database=todo;";
     }
 }
