@@ -7,3 +7,12 @@
 /Users/vjs/Desktop/Hair_Salon_App/HairSalon/obj/Debug/netcoreapp1.1/hairsalon.AssemblyInfo.cs
 /Users/vjs/Desktop/Hair_Salon_App/HairSalon/obj/Debug/netcoreapp1.1/hairsalon.dll
 /Users/vjs/Desktop/Hair_Salon_App/HairSalon/obj/Debug/netcoreapp1.1/hairsalon.pdb
+/Users/vjs/Desktop/HairSalon_Data/HairSalon/bin/Debug/netcoreapp1.1/hairsalon.deps.json
+/Users/vjs/Desktop/HairSalon_Data/HairSalon/bin/Debug/netcoreapp1.1/hairsalon.runtimeconfig.json
+/Users/vjs/Desktop/HairSalon_Data/HairSalon/bin/Debug/netcoreapp1.1/hairsalon.runtimeconfig.dev.json
+/Users/vjs/Desktop/HairSalon_Data/HairSalon/bin/Debug/netcoreapp1.1/hairsalon.dll
+/Users/vjs/Desktop/HairSalon_Data/HairSalon/bin/Debug/netcoreapp1.1/hairsalon.pdb
+/Users/vjs/Desktop/HairSalon_Data/HairSalon/obj/Debug/netcoreapp1.1/hairsalon.csproj.CoreCompileInputs.cache
+/Users/vjs/Desktop/HairSalon_Data/HairSalon/obj/Debug/netcoreapp1.1/hairsalon.AssemblyInfo.cs
+/Users/vjs/Desktop/HairSalon_Data/HairSalon/obj/Debug/netcoreapp1.1/hairsalon.dll
+/Users/vjs/Desktop/HairSalon_Data/HairSalon/obj/Debug/netcoreapp1.1/hairsalon.pdb

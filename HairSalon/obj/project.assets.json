@@ -9625,11 +9625,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/vjs/Desktop/Hair_Salon_App/HairSalon/hairsalon.csproj",
+      "projectUniqueName": "/Users/vjs/Desktop/HairSalon_Data/HairSalon/hairsalon.csproj",
       "projectName": "hairsalon",
-      "projectPath": "/Users/vjs/Desktop/Hair_Salon_App/HairSalon/hairsalon.csproj",
+      "projectPath": "/Users/vjs/Desktop/HairSalon_Data/HairSalon/hairsalon.csproj",
       "packagesPath": "/Users/vjs/.nuget/packages/",
-      "outputPath": "/Users/vjs/Desktop/Hair_Salon_App/HairSalon/obj/",
+      "outputPath": "/Users/vjs/Desktop/HairSalon_Data/HairSalon/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/vjs/.nuget/NuGet/NuGet.Config"
