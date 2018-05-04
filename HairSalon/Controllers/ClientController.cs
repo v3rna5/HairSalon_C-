@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using MySql.Data.MySqlClient;
 using HairSalon.Models;
 
 namespace HairSalon.Controllers
@@ -28,7 +29,7 @@ namespace HairSalon.Controllers
       [HttpGet("/stylist/{stylistId}/clients/{clientId}")]
        public ActionResult Details(int stylistId, int clientId)
        {
-          Client client = Client.Find(clientId);
+           Client client = Client.Find(clientId);
           Dictionary<string, object> model = new Dictionary<string, object>();
           Stylist stylist = Stylist.Find(stylistId);
           model.Add("client", client);

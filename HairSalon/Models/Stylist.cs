@@ -1,45 +1,46 @@
 using System.Collections.Generic;
-using System;
 
 namespace HairSalon.Models
 {
-  public class Client
+  public class Stylist
   {
-    private string _description;
+    private static List<Stylist> _instances = new List<Stylist> {};
+    private string _name;
     private int _id;
-    private static List<Client> _instances = new List<Client>{};
+    private List<Client> _clients;
 
-    public Client (string description)
+    public Stylist(string stylistName)
     {
-      _description = description;
+      _name = stylistName;
       _instances.Add(this);
       _id = _instances.Count;
+      _clients = new List<Client>{};
     }
-    public string GetDescription()
+    public List<Client> GetClients()
     {
-      return _description;
+      return _clients;
     }
-    public void SetDescription(string newDescription)
+    public void AddClient(Client client)
     {
-      _description = newDescription;
+      _clients.Add(client);
+    }
+    public string GetName()
+    {
+      return _name;
     }
     public int GetId()
     {
       return _id;
     }
-    public static List<Client> GetAll()
+    public static List<Stylist> GetAll()
     {
       return _instances;
     }
-    public void Save()
-    {
-      _instances.Add(this);
-    }
-        public static void ClearAll()
+    public static void Clear()
     {
       _instances.Clear();
     }
-    public static Client Find(int searchId)
+    public static Stylist Find(int searchId)
     {
       return _instances[searchId-1];
     }
