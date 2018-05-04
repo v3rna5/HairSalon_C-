@@ -64,23 +64,7 @@ namespace HairSalon.Models
     // {
     //   _instances.Add(this);
     // }
-
-
-    public override bool Equals(System.Object otherClient)
-    {
-      if (!(otherClient is Client))
-      {
-        return false;
-      }
-      else
-      {
-        Client newItem = (Client) otherClient;
-        bool idEquality = (this.GetId() == newItem.GetId());
-        bool descriptionEquality = (this.GetDescription() == newItem.GetDescription());
-        return (idEquality && descriptionEquality);
-      }
-    }
-
+  
     public void Save()
     {
       MySqlConnection conn = DB.Connection();
@@ -134,7 +118,6 @@ namespace HairSalon.Models
         clientId = rdr.GetInt32(0);
         clientDescription = rdr.GetString(1);
       }
-
       Client foundClient= new Client(clientDescription);
       foundClient.SetId(clientId);
 
@@ -143,7 +126,6 @@ namespace HairSalon.Models
       {
         conn.Dispose();
       }
-
       return foundClient;
     }
   }
