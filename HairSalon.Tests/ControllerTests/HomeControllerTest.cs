@@ -23,7 +23,7 @@ namespace ToDoList.Tests
      }
 
      [TestMethod]
-        public void Index_HasCorrectModelType_ItemList()
+        public void Index_HasCorrectModelType_SytlistList()
         {
             //Arrange
             ViewResult indexView = new HomeController().Index() as ViewResult;

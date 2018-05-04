@@ -32,63 +32,16 @@ namespace HairSalon.Tests
         }
 
         [TestMethod]
-        public void Equals_ReturnsTrueIfDescriptionsAreTheSame_Item()
+        public void Equals_ReturnsTrueIfDescriptionsAreTheSame_Client()
         {
             // Arrange, Act
-            Item firstClient = new Item("Mow the lawn");
-            Item secondClient = new Item("Mow the lawn");
+            Item firstClient = new Item("Verna");
+            Item secondClient = new Item("Verna");
 
             // Assert
             Assert.AreEqual(firstClient, secondClient);
         }
 
-        [TestMethod]
-        public void Save_SavesToDatabase_ClientList()
-        {
-            //Arrange
-            Client testClient = new Client("Mow the lawn");
-            testClient.SetDate("05/10/18");
-
-            //Act
-            testClient.Save();
-            List<Client> result = Client.GetAll();
-            List<Client> testList = new List<Client>{testClient};
-
-            //Assert
-            CollectionAssert.AreEqual(testList, result);
-        }
-
-        [TestMethod]
-        public void Save_AssignsIdToObject_Id()
-        {
-          //Arrange
-          Client testClient = new Client("Mow the lawn");
-          testItem.SetDate("05/10/18");
-
-          //Act
-          testClient.Save();
-          Item savedClient = Client.GetAll()[0];
-
-          int result = savedClient.GetId();
-          int testId = testClient.GetId();
-
-          //Assert
-          Assert.AreEqual(testId, result);
-        }
-
-        [TestMethod]
-        public void Find_FindsClientInDatabase_Item()
-        {
-            //Arrange
-            Item testClient = new Client("Mow the lawn");
-            testClient.SetDate("05/10/18");
-            testClient.Save();
-
-            //Act
-            Client foundClient = Client.Find(testClient.GetId());
-
-            //Assert
-            Assert.AreEqual(testClient, foundClient);
-        }
+      
     }
 }
