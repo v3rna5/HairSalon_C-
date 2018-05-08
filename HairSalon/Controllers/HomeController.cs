@@ -23,7 +23,7 @@ namespace HairSalon.Controllers
     [HttpPost("/index/new")]
     public ActionResult AddStylist()
     {
-      Stylist newStylist = new Stylist(Request.Form["stylist-name"]);
+      Stylist newStylist = new Stylist(Request.Form["stylist-name"], Request.Form["start-date"]);
       newStylist.Save();
       List<Stylist> allStylists = Stylist.GetAll();
 
@@ -37,6 +37,7 @@ namespace HairSalon.Controllers
       // model.Add("Client", null);
       Stylist selectedStylist = Stylist.Find(id);
       model.Add("this-stylist", selectedStylist);
+      model.Add("this-startdate", selectedStylist);
       List<Client> stylistClients = Client.GetAllClientsByStylist(selectedStylist.Id);
       model.Add("stylist-clients", stylistClients);
       return View(model);
@@ -59,6 +60,7 @@ namespace HairSalon.Controllers
       model.Add("Client", null);
       Stylist selectedStylist = Stylist.Find(id);
       model.Add("this-stylist", selectedStylist);
+      model.Add("this-startdate", selectedStylist);
       List<Client> stylistClients = Client.GetAllClientsByStylist(selectedStylist.Id);
       model.Add("stylist-clients", stylistClients);
       return View("StylistInfo", model);
@@ -73,6 +75,7 @@ namespace HairSalon.Controllers
       Client selectedClient = Client.Find(clientId);
       model.Add("stylist-clients", allClients);
       model.Add("this-stylist", selectedStylist);
+      model.Add("this-startdate", selectedStylist);
       // model.Add("Client", selectedClient);
       return View("StylistInfo", model);
     }
@@ -84,7 +87,6 @@ namespace HairSalon.Controllers
       selectedStylist.Delete();
       List<Stylist> allStylists = Stylist.GetAll();
       return View("Index", allStylists);
-
     }
   }
 }

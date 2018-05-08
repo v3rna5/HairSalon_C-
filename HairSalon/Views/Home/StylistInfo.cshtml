@@ -3,28 +3,21 @@
 }
 <h1>Stylist Information<h1>
 <h2>@Model["this-stylist"].Name</h2>
-
-
-<h4>Client</h4>
-
+<h5>Start Date: @Model["this-startdate"].StartDate</h5>
+<hr>
+<h5>Client</h5>
 @if(Model["stylist-clients"].Count == 0)
       {
-
       <p>Stylist has no current clients!</p>
-
-        <a href='/index/@Model["this-stylist"].Id/clients/new'>Add a client</a>
+      <a href='/index/@Model["this-stylist"].Id/clients/new'>Add a client</a>
       }
       else
       {
-        <ul>
           @foreach(var client in Model["stylist-clients"])
           {
-            <li><a href='/index/@Model["this-stylist"].Id/clients/@client.Id'>@client.Name</a></li>
+            <a href='/index/@Model["this-stylist"].Id/clients/@client.Id'>@client.Name</a>
           }
-        </ul>
       }
-
-
       <form action='/index/@Model["this-stylist"].Id/delete' method="post">
       <button class="btn" type="submit">Delete Stylist</button>
       </form>

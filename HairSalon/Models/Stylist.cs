@@ -10,11 +10,13 @@ namespace HairSalon.Models
   {
     public string Name;
     public int Id;
+    public string StartDate;
 
-    public Stylist (string name, int id = 0)
+    public Stylist (string name, string startDate, int id = 0)
     {
       Name = name;
       Id = id;
+      StartDate = startDate;
 
     }
     public string GetName()
@@ -33,6 +35,15 @@ namespace HairSalon.Models
     {
       Id = NewId;
     }
+    public string GetStartDate()
+    {
+      return StartDate;
+    }
+    public void SetStartDate(string NewStartDate)
+    {
+      StartDate = NewStartDate;
+    }
+
 
     public static void ClearAll()
     {
@@ -62,8 +73,9 @@ namespace HairSalon.Models
       {
         int stylistId = rdr.GetInt32(0);
         string stylistName = rdr.GetString(1);
+        string startDate = rdr.GetString(2);
 
-        Stylist newStylist = new Stylist(stylistName, stylistId);
+        Stylist newStylist = new Stylist(stylistName, startDate, stylistId);
         allStylists.Add(newStylist);
       }
       conn.Close();
@@ -96,13 +108,19 @@ namespace HairSalon.Models
       conn.Open();
 
       var cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"INSERT INTO stylists (name) VALUES (@StylistName);";
+      cmd.CommandText = @"INSERT INTO stylists (name, startdate) VALUES (@StylistName, @StylistStartDate);";
 
 
       MySqlParameter name = new MySqlParameter();
       name.ParameterName = "@StylistName";
       name.Value = this.Name;
       cmd.Parameters.Add(name);
+
+      MySqlParameter startDate = new MySqlParameter();
+      startDate.ParameterName = "@StylistStartDate";
+      startDate.Value = this.StartDate;
+      cmd.Parameters.Add(startDate);
+
 
       cmd.ExecuteNonQuery();
       Id = (int) cmd.LastInsertedId;
@@ -129,17 +147,18 @@ namespace HairSalon.Models
 
       int stylistId = 0;
       string stylistName = "";
-
+      string startDate = "";
 
       var rdr = cmd.ExecuteReader() as MySqlDataReader;
       while (rdr.Read())
       {
         stylistId = rdr.GetInt32(0);
         stylistName = rdr.GetString(1);
+        startDate = rdr.GetString(2);
 
       }
 
-      Stylist foundStylist = new Stylist(stylistName, stylistId);
+      Stylist foundStylist = new Stylist(stylistName, startDate, stylistId);
 
       conn.Close();
       if (conn != null)

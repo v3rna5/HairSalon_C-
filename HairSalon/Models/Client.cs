@@ -11,12 +11,14 @@ namespace HairSalon.Models
     public string Name;
     public int Id;
     public int StylistId;
+  
 
     public Client(string name, int stylistId, int id = 0)
     {
       Name = name;
       Id = id;
       StylistId = stylistId;
+
     }
     public string GetName()
     {
@@ -42,6 +44,8 @@ namespace HairSalon.Models
     {
       StylistId = NewStylistId;
     }
+
+
 
     public static void ClearAll()
     {
@@ -72,6 +76,7 @@ namespace HairSalon.Models
         int clientId = rdr.GetInt32(0);
         string clientName = rdr.GetString(1);
         int stylistId = rdr.GetInt32(2);
+
 
         Client newClient = new Client(clientName, stylistId, clientId);
         allClients.Add(newClient);
@@ -104,6 +109,7 @@ namespace HairSalon.Models
         int returnId = rdr.GetInt32(0);
         string returnName = rdr.GetString(1);
         int returnStylistId = rdr.GetInt32(2);
+
         Client returnClient = new Client(returnName, returnStylistId, returnId);
         stylistClients.Add(returnClient);
       }
@@ -184,6 +190,7 @@ namespace HairSalon.Models
         clientId = rdr.GetInt32(0);
         clientName = rdr.GetString(1);
         clientStylistId = rdr.GetInt32(2);
+
       }
       Client foundClient = new Client(clientName, clientStylistId, clientId);
 
