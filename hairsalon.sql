@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 08, 2018 at 01:51 AM
+-- Generation Time: May 08, 2018 at 03:16 AM
 -- Server version: 5.6.38
 -- PHP Version: 7.2.1
 
@@ -42,15 +42,9 @@ CREATE TABLE `clients` (
 
 CREATE TABLE `stylists` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL
+  `name` varchar(255) NOT NULL,
+  `startdate` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `stylists`
---
-
-INSERT INTO `stylists` (`id`, `name`) VALUES
-(12, '');
 
 --
 -- Indexes for dumped tables
@@ -82,7 +76,7 @@ ALTER TABLE `clients`
 -- AUTO_INCREMENT for table `stylists`
 --
 ALTER TABLE `stylists`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
